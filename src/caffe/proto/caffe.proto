@@ -153,10 +153,13 @@ message SolverParameter {
     SGD = 0;
     NESTEROV = 1;
     ADAGRAD = 2;
+    RMSPROP = 3;
   }
   optional SolverType solver_type = 30 [default = SGD];
   // numerical stability for AdaGrad
   optional float delta = 31 [default = 1e-8];
+  // decay rate for RMSProp
+  optional float rms_rate = 35 [default = 0.9];
 
   // If true, print information about the state of the net that may help with
   // debugging learning problems.
